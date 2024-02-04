@@ -14,7 +14,7 @@ private:
 
 public:
 	Code(int n, int m);
-	void manualCodeSelection();
+	Code(std::vector<int>& s);
 	void randomCodeSelection();
 	int checkCorrect(Code &guess);
 	int checkIncorrect(Code &guess);

@@ -8,20 +8,14 @@ Code::Code(int n, int m) {
 	codeLimit = m;
 
 }
-void Code::manualCodeSelection() {
-	cout << "Enter " << codeSize << " code values in range 0<x<" << codeLimit << endl;
-	int value;
-	for (int i = 0; i < codeSize;) {
-		//cout << "Enter values " << i << ": ";
-		cin >> value;
-		if (value <= 0 || value > codeLimit) {
-			cout << "\nError, value out of bound. Please enter new value\n";
-			continue;
-		}
-		codeSequence.push_back(value);
-		i++;
-	}
+Code::Code(std::vector<int>& s) {
+	codeLimit = *max_element(s.begin(), s.end());
+	codeSize = sizeof(s);
+
+	codeSequence = s;
+
 }
+
 void Code::randomCodeSelection() {
 	for (int i = 0; i < codeSize;) {
 		
