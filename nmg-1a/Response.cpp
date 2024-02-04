@@ -25,12 +25,12 @@ const int Response::getIncorrect(){
 //overloaded operator == compares responses and returns true
 //if they are equal 
 bool operator==(Response& lhs, Response& rhs){
-    return (lhs.numCorrect == rhs.numCorrect) && (lhs.numIncorrect == rhs.numIncorrect);
+    return (lhs.getCorrect() == rhs.getCorrect()) && (lhs.getIncorrect() == rhs.getIncorrect());
 }
 
 //overloaded operator << that prints a response
 ostream& operator<<(ostream&out, Response& A){
-    out << "Correct: " << A.numCorrect << "Incorrect: " << A.numIncorrect <<endl;
+    out << "Correct: " << A.getCorrect() << "\tIncorrect: " << A.getIncorrect() <<endl;
     return out;
 }
 

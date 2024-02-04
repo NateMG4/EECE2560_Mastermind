@@ -3,14 +3,16 @@
 
 #include "Code.h"
 #include "Response.h"
+
 class Mastermind{
 
 public:
-    //constructor passed values of n and m read from keyboard
-    Mastermind(int n, int m);
 
     //constructor passed no parameters, use default value
     Mastermind();
+
+    //constructor passed values of n and m read from keyboard
+    Mastermind(int n, int m);
 
     //a function prints secret code
     void printSecretCode();
@@ -21,19 +23,21 @@ public:
 
     //getResponse() pass one code (guess code)
     //return a response
-    Response getResponse();
+    Response getResponse(Code& guess);
 
     //isSolved() pass a response
     //return true if the response indicates that the board has been solved
-    bool isSolved();
+    bool isSolved(Code& guess);
 
     //playGame() initialize a random code, print it to the screen 
     //iteratively get a guess from the user and print the response
     //until either the codemaker or the codebreaker has won 
     void playGame();
 private:
+    int codeSize, codeLimit;
+
     //secret code
-    Code codeSequence;
+    Code* code;
 };
 
 #endif
