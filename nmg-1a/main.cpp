@@ -6,7 +6,7 @@ int main() {
 	cout << "Enter code size: ";
 	cin >> size;
 
-	cout << "Enter maximum int value: ";
+	cout << "Enter maximum value: ";
 	cin >> limit;
 
 	Mastermind game(size, limit);
