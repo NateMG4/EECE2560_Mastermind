@@ -21,7 +21,7 @@ Mastermind::Mastermind(int n, int m){
 //a function prints secret code
 void Mastermind::printSecretCode(){
 
-    cout << "The Secret Code is: " << code << endl;
+    cout << "The Secret Code is: " << *code << endl;
 }
 
 //humanGuess() read a guess from the keyboard
@@ -33,7 +33,7 @@ Code Mastermind::humanGuess(){
 	for (int i = 0; i < codeSize;) {
 		//cout << "Enter values " << i << ": ";
 		cin >> value;
-		if (value <= 0 || value > codeLimit) {
+		if (value < 0 || value > codeLimit) {
 			cout << "\nError, value out of bounds. Please enter new value\n";
 			continue;
 		}
@@ -74,6 +74,7 @@ void Mastermind::playGame() {
     do {
         Code g = humanGuess();
         Response response = getResponse(g);
+        cout << response << endl;
         solved = isSolved(response);
         //until either the codemaker or the codebreaker has won 
     } while (!solved);

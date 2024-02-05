@@ -1,5 +1,4 @@
 #include "Code.h"
-#include <iostream>
 #include <cstdlib>
 using namespace std;
 
@@ -10,7 +9,7 @@ Code::Code(int n, int m) {
 }
 Code::Code(std::vector<int>& s) {
 	codeLimit = *max_element(s.begin(), s.end());
-	codeSize = sizeof(s);
+	codeSize = size(s);
 
 	codeSequence = s;
 
