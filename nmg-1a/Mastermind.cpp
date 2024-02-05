@@ -21,7 +21,7 @@ Mastermind::Mastermind(int n, int m){
 //a function prints secret code
 void Mastermind::printSecretCode(){
 
-    cout << "The Secret Code is: " << code;
+    cout << "The Secret Code is: " << code << endl;
 }
 
 //humanGuess() read a guess from the keyboard
@@ -55,29 +55,29 @@ Response Mastermind::getResponse(Code& guess){
 
 //isSolved() pass a response
 //return true if the response indicates that the board has been solved
-bool Mastermind::isSolved(Code& guess){
-    return getResponse(*code) == getResponse(guess);
+bool Mastermind::isSolved(Response& rhs){
+    Response lhs = getResponse(*code);
+    return lhs == rhs;
 }
 
 
 
     
     
-void Mastermind::playGame(){
-    ////initialize a random code, print it to the screen
-    //printSecretCode();
+void Mastermind::playGame() {
+    //initialize a random code, print it to the screen
+    code->randomCodeSelection();
+    printSecretCode();
 
-    ////iteratively get a guess from the user and print the response
-    //while (true){
-    //  
+    bool solved;
+    //iteratively get a guess from the user and print the response
+    do {
+        Code g = humanGuess();
+        Response response = getResponse(g);
+        solved = isSolved(response);
+        //until either the codemaker or the codebreaker has won 
+    } while (!solved);
+    
 
-    //
-    ////until either the codemaker or the codebreaker has won 
-    //if (isSolved()){
 
-
-    //    }
-    //}
 }
-
-

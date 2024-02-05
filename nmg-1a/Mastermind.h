@@ -3,7 +3,6 @@
 
 #include "Code.h"
 #include "Response.h"
-
 class Mastermind{
 
 public:
@@ -27,7 +26,7 @@ public:
 
     //isSolved() pass a response
     //return true if the response indicates that the board has been solved
-    bool isSolved(Code& guess);
+    bool isSolved(Response& rhs);
 
     //playGame() initialize a random code, print it to the screen 
     //iteratively get a guess from the user and print the response

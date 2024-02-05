@@ -58,22 +58,3 @@ ostream& operator<<(ostream& ostr, Code& c){
 	}
 	return ostr;
 }
-
-int main() {
-	int size = 5;
-	int limit = 10;
-	Code masterCode(size, limit);
-	masterCode.randomCodeSelection();
-	for (int i = 0; i < 3; i++) {
-		Code guess(size, limit);
-		guess.manualCodeSelection();
-		cout << "Num correct: " << masterCode.checkCorrect(guess) << endl;
-		cout << "Num Incorrect: " << masterCode.checkIncorrect(guess) << endl;
-	}
-
-	cout << "Master Code: " << masterCode << endl;
-	int x;
-	cout << "Press any key to exit.";
-	cin >> x;
-	return 0;
-}
