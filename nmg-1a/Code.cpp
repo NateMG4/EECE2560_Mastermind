@@ -53,7 +53,7 @@ int Code::checkIncorrect(Code& guess) {
 
 ostream& operator<<(ostream& ostr, Code& c){
 	for (int i = 0; i < c.codeSize; i++) {
-		ostr << c.codeSequence[i];
+		ostr << c.codeSequence[i] << " ";
 	}
 	return ostr;
 }

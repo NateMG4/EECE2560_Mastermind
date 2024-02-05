@@ -33,7 +33,7 @@ Code Mastermind::humanGuess(){
 	for (int i = 0; i < codeSize;) {
 		//cout << "Enter values " << i << ": ";
 		cin >> value;
-		if (value < 0 || value > codeLimit) {
+		if (value < 0 || value >= codeLimit) {
 			cout << "\nError, value out of bounds. Please enter new value\n";
 			continue;
 		}
@@ -70,15 +70,18 @@ void Mastermind::playGame() {
     printSecretCode();
 
     bool solved;
+    int roundNum = 0;
     //iteratively get a guess from the user and print the response
     do {
+        cout << "Round #" << ++roundNum << endl;
         Code g = humanGuess();
         Response response = getResponse(g);
         cout << response << endl;
         solved = isSolved(response);
         //until either the codemaker or the codebreaker has won 
-    } while (!solved);
-    
+    } while (!solved && roundNum <= 10);
+
+    cout << (solved ? "Codebreaker" : "Codemaker") << " Wins!" << endl;
 
 
 }
