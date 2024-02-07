@@ -18,6 +18,8 @@ public:
 	void randomCodeSelection();
 	int checkCorrect(Code &guess);
 	int checkIncorrect(Code &guess);
+	int getCodeSize();
+	int getCodeLimit();
 	friend std::ostream& operator<<(std::ostream& ostr, Code &c);
 };
 

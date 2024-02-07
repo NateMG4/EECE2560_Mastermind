@@ -67,6 +67,7 @@ bool Mastermind::isSolved(Response& rhs){
 void Mastermind::playGame() {
     //initialize a random code, print it to the screen
     code->randomCodeSelection();
+    // For debug purposes only print secret code
     printSecretCode();
 
     bool solved;

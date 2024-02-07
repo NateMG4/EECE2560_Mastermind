@@ -7,6 +7,10 @@ Response::Response(): numCorrect(0), numIncorrect(0) {}
 
 
 void Response::setCorrect(int correct){
+    if (correct < 0) {
+        numCorrect = 0;
+        return;
+    }
    numCorrect = correct;
 }
 
@@ -15,6 +19,10 @@ const int Response::getCorrect(){
 }
 
 void Response::setIncorrect(int incorrect){
+    if (incorrect < 0) {
+        numIncorrect = 0;
+        return;
+    }
     numIncorrect = incorrect;
 }
 
